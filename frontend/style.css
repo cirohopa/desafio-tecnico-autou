@@ -78,3 +78,28 @@ button:disabled {
 .error-message {
     color: #c0392b; /* Um tom de vermelho */
 }
+
+/* --- Estilos para Telas Pequenas (Responsividade) --- */
+
+/* Breakpoint: Para qualquer tela com 680px de largura ou menos */
+@media (max-width: 680px) {
+    
+    body {
+        /* Remove o alinhamento central para aproveitar melhor a tela */
+        align-items: flex-start;
+    }
+
+    .container {
+        /* Remove margens e bordas para que o container ocupe a tela toda */
+        margin: 0;
+        padding: 20px;
+        border-radius: 0;
+        min-height: 100vh;
+        box-shadow: none;
+    }
+
+    header h1 {
+        /* Diminui um pouco o título principal */
+        font-size: 1.8em;
+    }
+}
