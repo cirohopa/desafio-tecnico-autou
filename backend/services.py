@@ -1,30 +1,28 @@
-import os
+# backend/services.py
 import json
 from openai import OpenAI
-from dotenv import load_dotenv
+# 1. Importe o objeto 'settings' do nosso novo arquivo de configuração
+from config import settings
 
-load_dotenv()
-
-api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
-    raise ValueError("A chave da API da OpenAI não foi encontrada.")
-client = OpenAI(api_key=api_key)
+# 2. A inicialização do cliente agora é muito mais limpa.
+# A validação da chave já foi feita pelo 'config.py'.
+client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
 def analisar_email(texto_email: str) -> dict | None:
     prompt_sistema = """
-        Você é um assistente de produtividade altamente eficiente, especializado em analisar e-mails.
-        Sua tarefa é classificar um e-mail em uma de duas categorias: 'Produtivo' ou 'Improdutivo'.
-        - 'Produtivo': E-mails que requerem uma ação, resposta ou contêm informação importante.
-        - 'Improdutivo': E-mails de marketing, felicitações, agradecimentos genéricos ou spam.
+    Você é um assistente de produtividade altamente eficiente, especializado em analisar e-mails.
+    Sua tarefa é classificar um e-mail em uma de duas categorias: 'Produtivo' ou 'Improdutivo'.
+    - 'Produtivo': E-mails que requerem uma ação, resposta ou contêm informação importante.
+    - 'Improdutivo': E-mails de marketing, felicitações, agradecimentos genéricos ou spam.
 
-        Além de classificar, você deve gerar uma sugestão de resposta curta e profissional, apropriada para a categoria.
+    Além de classificar, você deve gerar uma sugestão de resposta curta e profissional, apropriada para a categoria.
 
-        Sua resposta final deve ser estritamente um objeto JSON, sem nenhum texto ou explicação adicional antes ou depois.
-        O objeto JSON deve ter a seguinte estrutura:
-        {
-        "categoria": "...",
-        "sugestao_resposta": "..."
-        }
+    Sua resposta final deve ser estritamente um objeto JSON, sem nenhum texto ou explicação adicional antes ou depois.
+    O objeto JSON deve ter a seguinte estrutura:
+    {
+      "categoria": "...",
+      "sugestao_resposta": "..."
+    }
     """
     try:
         response = client.chat.completions.create(
