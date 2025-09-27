@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de E-mails - AutoU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Analisador de E-mails 📧</h1>
+            <p>Cole o texto de um e-mail abaixo para classificá-lo como produtivo ou improdutivo e receber uma sugestão de resposta.</p>
+        </header>
+
+        <main>
+            <textarea id="email-input" placeholder="Cole o conteúdo do seu e-mail aqui..." rows="10"></textarea>
+            <button id="analyze-btn">Analisar E-mail</button>
+        </main>
+
+        <section id="result-container" class="hidden">
+            <h2>Resultado da Análise</h2>
+            <div id="result-content">
+                </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
