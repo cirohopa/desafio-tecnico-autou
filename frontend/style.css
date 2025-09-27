@@ -74,3 +74,7 @@ button:disabled {
 #result-content strong {
     color: #2c3e50;
 }
+
+.error-message {
+    color: #c0392b; /* Um tom de vermelho */
+}
