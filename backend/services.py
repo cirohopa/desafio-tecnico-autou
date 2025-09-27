@@ -1,4 +1,3 @@
-# backend/services.py
 import json
 from openai import OpenAI
 # 1. Importe o objeto 'settings' do nosso novo arquivo de configuração

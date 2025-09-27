@@ -1,9 +1,5 @@
-# backend/test_openai_logic.py
-
-# 1. Importe a função do seu novo arquivo de serviço
 from services import analisar_email
 
-# O bloco de execução para teste continua o mesmo!
 # Ele agora vai testar a função que está em services.py
 if __name__ == "__main__":
     # Exemplo 1: E-mail produtivo
