@@ -1,0 +1,11 @@
+# Ambiente Virtual do Backend
+/backend/venv/
+
+# Arquivos de ambiente com segredos (chave da API)
+.env
+/backend/.env
+*.env
+
+# Pastas de cache e arquivos compilados do Python
+__pycache__/
+*.pyc
