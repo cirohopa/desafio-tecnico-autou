@@ -1,6 +1,9 @@
 import json
 from openai import OpenAI
-# 1. Importe o objeto 'settings' do nosso novo arquivo de configuração
+
+from pypdf import PdfReader
+import io
+
 from config import settings
 
 # 2. A inicialização do cliente agora é muito mais limpa.
@@ -37,4 +40,41 @@ def analisar_email(texto_email: str) -> dict | None:
         return json.loads(resultado_json_str)
     except Exception as e:
         print(f"!!! Ocorreu um erro ao chamar a API da OpenAI: {e}")
+        return None
+    
+# Adicione estas duas funções ao final de services.py
+
+def extrair_texto_de_pdf(file_bytes: bytes) -> str | None:
+    """
+    Recebe os bytes de um arquivo PDF e extrai o texto de todas as páginas.
+    """
+    try:
+        pdf_file = io.BytesIO(file_bytes)
+        reader = PdfReader(pdf_file)
+        texto_completo = ""
+        for page in reader.pages:
+            texto_extraido = page.extract_text()
+            if texto_extraido:
+                texto_completo += texto_extraido + "\n"
+        return texto_completo
+    except Exception as e:
+        print(f"!!! Erro ao processar o PDF: {e}")
+        return None
+
+def extrair_texto_de_txt(file_bytes: bytes) -> str | None:
+    """
+    Recebe os bytes de um arquivo TXT e decodifica para texto.
+    """
+    try:
+        # Tenta decodificar como UTF-8, o padrão mais comum
+        return file_bytes.decode('utf-8')
+    except UnicodeDecodeError:
+        try:
+            # Tenta outros formatos comuns se o UTF-8 falhar
+            return file_bytes.decode('latin-1')
+        except Exception as e:
+            print(f"!!! Erro ao decodificar o TXT: {e}")
+            return None
+    except Exception as e:
+        print(f"!!! Erro geral ao processar o TXT: {e}")
         return None
