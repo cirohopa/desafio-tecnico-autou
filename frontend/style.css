@@ -103,3 +103,62 @@ button:disabled {
         font-size: 1.8em;
     }
 }
+
+.separator {
+    margin: 20px 0;
+    color: #aaa;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* Estiliza nossa 'label' para parecer um botão secundário */
+.file-label {
+    background-color: #7f8c8d;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Faz ocupar a linha toda e respeitar a margem */
+    max-width: 300px;
+    margin: 0 auto 20px auto; /* Centraliza e adiciona espaço abaixo */
+    transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: #6c7a7b;
+}
+
+/* Renomeia o botão principal para ser mais genérico */
+#analyze-btn {
+    width: 100%;
+}
+
+/* Adicione ao final de frontend/style.css */
+
+#file-info {
+    background-color: #ecf0f1;
+    color: #34495e;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: -10px auto 20px auto;
+    max-width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    border: 1px solid #bdc3c7;
+}
+
+#file-info.hidden {
+    display: none;
+}
+
+.clear-file-btn {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #c0392b;
+    font-weight: bold;
+}
