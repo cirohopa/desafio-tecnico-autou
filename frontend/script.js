@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultContainer = document.getElementById('result-container');
     const resultContent = document.getElementById('result-content');
     const fileInput = document.getElementById('file-input');
-    const fileInfoDiv = document.getElementById('file-info'); // -- NOVO --
+    const fileInfoDiv = document.getElementById('file-info');
 
     // --- 2. Configurações ---
     const API_BASE_URL = 'http://127.0.0.1:8000';
