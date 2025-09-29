@@ -6,8 +6,7 @@ import io
 
 from config import settings
 
-# 2. A inicialização do cliente agora é muito mais limpa.
-# A validação da chave já foi feita pelo 'config.py'.
+# A validação da chave foi feita pelo 'config.py'.
 client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
 def analisar_email(texto_email: str) -> dict | None:
@@ -42,8 +41,6 @@ def analisar_email(texto_email: str) -> dict | None:
         print(f"!!! Ocorreu um erro ao chamar a API da OpenAI: {e}")
         return None
     
-# Adicione estas duas funções ao final de services.py
-
 def extrair_texto_de_pdf(file_bytes: bytes) -> str | None:
     """
     Recebe os bytes de um arquivo PDF e extrai o texto de todas as páginas.

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayError(error.message);
         } finally {
             setLoadingState(false);
-            clearFileInput(); // -- ALTERAÇÃO --
+            clearFileInput();
         }
     };
 
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (body instanceof FormData) {
             options.body = body;
         } else {
-            // Para texto, enviamos JSON.
             options.headers = { 'Content-Type': 'application/json' };
             options.body = JSON.stringify(body);
         }
@@ -60,13 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
     };
 
-    // -- INÍCIO DO NOVO BLOCO DE CÓDIGO --
     /**
      * Limpa a seleção de arquivo e esconde o display de informação.
      */
     const clearFileInput = () => {
-        fileInput.value = ''; // Limpa o input de arquivo
-        fileInfoDiv.classList.add('hidden'); // Esconde o display
+        fileInput.value = '';
+        fileInfoDiv.classList.add('hidden');
     };
 
     /**
@@ -94,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
             fileInfoDiv.classList.add('hidden');
         }
     });
-    // -- FIM DO NOVO BLOCO DE CÓDIGO --
 
     const setLoadingState = (isLoading) => {
         analyzeBtn.disabled = isLoading;

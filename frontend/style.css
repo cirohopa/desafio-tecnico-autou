@@ -76,7 +76,7 @@ button:disabled {
 }
 
 .error-message {
-    color: #c0392b; /* Um tom de vermelho */
+    color: #c0392b;
 }
 
 /* --- Estilos para Telas Pequenas (Responsividade) --- */
@@ -99,7 +99,6 @@ button:disabled {
     }
 
     header h1 {
-        /* Diminui um pouco o título principal */
         font-size: 1.8em;
     }
 }
@@ -112,7 +111,7 @@ button:disabled {
     font-size: 0.9em;
 }
 
-/* Estiliza nossa 'label' para parecer um botão secundário */
+/* Estiliza a 'label' para parecer um botão secundário */
 .file-label {
     background-color: #7f8c8d;
     color: white;
@@ -129,12 +128,10 @@ button:disabled {
     background-color: #6c7a7b;
 }
 
-/* Renomeia o botão principal para ser mais genérico */
 #analyze-btn {
     width: 100%;
 }
 
-/* Adicione ao final de frontend/style.css */
 
 #file-info {
     background-color: #ecf0f1;

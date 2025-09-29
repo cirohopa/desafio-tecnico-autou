@@ -1,8 +1,8 @@
 from services import analisar_email
 
-# Ele agora vai testar a função que está em services.py
+# Ele vai testar a função que está em services.py
 if __name__ == "__main__":
-    # Exemplo 1: E-mail produtivo
+
     email_produtivo = """
     Olá equipe,
     Gostaria de verificar o status do ticket #45321 sobre a falha no login.
@@ -16,7 +16,6 @@ if __name__ == "__main__":
         print("Análise Concluída:", analise1)
 
 
-    # Exemplo 2: E-mail improdutivo
     email_improdutivo = """
     Prezados,
     Gostaria de desejar a todos um Feliz Natal e um próspero Ano Novo!

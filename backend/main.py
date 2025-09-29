@@ -1,8 +1,8 @@
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 
-# 1. Importa nossos modelos do novo arquivo de schemas
 from schemas import EmailRequest, EmailResponse
+
 from services import analisar_email, extrair_texto_de_pdf, extrair_texto_de_txt
 
 app = FastAPI()
@@ -33,7 +33,6 @@ def analisar(request: EmailRequest):
 
     return resultado
 
-# NOVO ENDPOINT PARA ARQUIVOS
 @app.post("/analisar-arquivo", response_model=EmailResponse)
 async def analisar_arquivo(file: UploadFile = File(...)):
     """
@@ -52,7 +51,6 @@ async def analisar_arquivo(file: UploadFile = File(...)):
     if texto_extraido is None or not texto_extraido.strip():
         raise HTTPException(status_code=400, detail="Não foi possível extrair texto do arquivo enviado. O arquivo pode estar vazio ou ser uma imagem.")
 
-    # REUTILIZANDO nossa lógica principal!
     resultado = analisar_email(texto_extraido)
 
     if resultado is None:

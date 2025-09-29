@@ -1,7 +1,7 @@
 # Ambiente Virtual do Backend
 /backend/venv/
 
-# Arquivos de ambiente com segredos (chave da API)
+# Arquivos de ambiente com chave da API
 .env
 /backend/.env
 *.env
