@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileInfoDiv = document.getElementById('file-info');
 
     // --- 2. Configurações ---
-    const API_BASE_URL = 'http://127.0.0.1:8000';
+    const API_BASE_URL = 'https://autou-backend-y7l1.onrender.com';
 
     // --- 3. Funções Principais ---
 
