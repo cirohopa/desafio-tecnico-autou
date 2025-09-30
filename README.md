@@ -2,10 +2,13 @@
 Este projeto é uma solução completa para o desafio técnico do processo seletivo da AutoU. Trata-se de uma aplicação web full-stack que utiliza Inteligência Artificial para classificar e-mails como "Produtivos" ou "Improdutivos" e sugerir respostas automáticas, otimizando o fluxo de trabalho de equipes que lidam com um alto volume de mensagens.
 
 ## 🚀 Aplicação Online
-A aplicação está hospedada na nuvem e pode ser acessada através do link abaixo:
+A aplicação está hospedada na nuvem e pode ser acessada através do link a seguir:
+
 Acesse o Analisador de E-mails [aqui](https://autou-frontend-fnqw.onrender.com)!
 
-- Nota: A aplicação está hospedada no plano gratuito do Render. O primeiro acesso pode levar de 30 a 60 segundos para ativar o servidor. Se encontrar um erro na primeira tentativa, por favor, aguarde um momento e tente novamente.Demonstração Rápida 
+- Nota: A aplicação está hospedada no plano gratuito do Render. O primeiro acesso pode levar de 30 a 60 segundos para ativar o servidor. Se encontrar um erro na primeira tentativa, por favor, aguarde um momento e tente novamente.
+
+Demonstração Rápida 
 ![GIF da aplicação analisando arquivo .txt](./assets/analise-de-txt-autou.gif)
 
 ## 🎯 Sobre o Projeto
