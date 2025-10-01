@@ -16,7 +16,7 @@ O objetivo foi desenvolver uma ferramenta intuitiva que automatiza a triagem de 
 
 ## ✨ Funcionalidades
 A aplicação vai além dos requisitos básicos, implementando funcionalidades que melhoram a robustez e a experiência do usuário:
-- Análise por Múltiplos Formatos: Análise de texto colado diretamente na interface.Upload e processamento de arquivos .pdf.
+- Análise por Múltiplos Formatos: Análise de texto colado diretamente na interface. Upload e processamento de arquivos .pdf.
 - Upload e processamento de arquivos .txt.
 - Inteligência Artificial (OpenAI): Classificação do e-mail em Produtivo ou Improdutivo.
 - Geração de respostas automáticas contextuais e profissionais. 
